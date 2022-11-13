@@ -20,4 +20,4 @@
 <h2 class="display-2"><code>Code Editor</code></h2>
 <form action="phpeditor.php" method="post">
   <input type="submit" value="PHP Editor" class="btn btn-primary btn-lg btn-dark" name="submit">
-</form>
+</form> 
