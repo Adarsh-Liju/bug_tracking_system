@@ -5,7 +5,7 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["code"]["name"]);
 $uploadOk = 1;
 $codeFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
+print($codeFileType);
 // Check file size
 if ($_FILES["code"]["size"] > 500000) {
     echo "Sorry, your file is too large.";

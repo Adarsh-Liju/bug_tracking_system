@@ -1,9 +1,10 @@
 import os
-true= '✔️'
-false= '❌'
-test=[]
 
-db=open("db/issue_tracker_db.db","r")
+true = "✔️"
+false = "❌"
+test = []
+
+db = open("db/issue_tracker_db.db", "r")
 if db:
     print("Database file exists")
     test.append(true)
@@ -14,7 +15,7 @@ else:
 
 db.close()
 
-db_file=open("db/issue_tracker_db.db","r")
+db_file = open("db/issue_tracker_db.db", "r")
 if os.stat("db/issue_tracker_db.db").st_size == 0:
     print("Database file is empty")
     test.append(false)
@@ -24,7 +25,7 @@ else:
 
 db_file.close()
 
-css=os.path.exists("css")
+css = os.path.exists("css")
 if css:
     print("CSS file exists")
     test.append(true)
@@ -34,9 +35,9 @@ else:
 
 print("------------------------------------------------------------")
 for i in test:
-    if i == false:
-        print("Test Passed",end="✔️\n")
+    if i == true:
+        print("Test Passed", end="✔️\n")
     else:
-        print("Test Failed",end="❌\n")
+        print("Test Failed", end="❌\n")
 
 print("------------------------------------------------------------")
