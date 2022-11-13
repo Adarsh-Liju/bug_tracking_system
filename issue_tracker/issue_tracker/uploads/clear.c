@@ -3,6 +3,6 @@
 #include <stdio.h>
 int main()
 {
-    printf("Hello World");
+    prin
     fflush(0);
 }

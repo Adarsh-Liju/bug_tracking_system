@@ -3,9 +3,8 @@ if(!is_dir('./db'))
     mkdir('./db');
 if(!defined('db_file')) define('db_file','./db/issue_tracker_db.db');
 function my_udf_md5($string) {
-    return md5($string);
+    return  ($string);
 }
-
 Class DBConnection extends SQLite3{
     protected $db;
     function __construct(){
@@ -57,5 +56,5 @@ Class DBConnection extends SQLite3{
          $this->close();
     }
 }
-
+// conn = connection to the DB
 $conn = new DBConnection();

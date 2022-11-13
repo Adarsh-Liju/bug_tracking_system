@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once('DBConnection.php');
 
@@ -123,9 +123,9 @@ Class Actions extends DBConnection{
         if(isset($cols) && isset($values)){
             $data = "(".implode(',',$cols).") VALUES (".implode(',',$values).")";
         }
-        
 
-       
+
+
         $check = $this->query("SELECT count(user_id) as `count` FROM user_list where `username` = '{$username}' ".($id > 0 ? " and user_id != '{$id}' " : ""))->fetchArray()['count'];
         if($check > 0){
             $resp['status'] = 'failed';
@@ -184,8 +184,8 @@ Class Actions extends DBConnection{
             $values[] = "'{$_SESSION['user_id']}'";
             $data = "(".implode(',',$cols).") VALUES (".implode(',',$values).")";
         }
-       
-        
+
+
         if(empty($id)){
             $sql = "INSERT INTO `issue_list` {$data}";
         }else{
@@ -238,8 +238,8 @@ Class Actions extends DBConnection{
             $values[] = "'{$_SESSION['user_id']}'";
             $data = "(".implode(',',$cols).") VALUES (".implode(',',$values).")";
         }
-       
-        
+
+
         if(empty($id)){
             $sql = "INSERT INTO `comment_list` {$data}";
         }else{

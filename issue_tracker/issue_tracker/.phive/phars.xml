@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phive xmlns="https://phar.io/phive">
+  <phar name="php-doc-check" version="^0.2.2" installed="0.2.2" location="./tools/php-doc-check" copy="false"/>
+</phive>

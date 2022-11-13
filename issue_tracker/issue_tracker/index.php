@@ -50,6 +50,8 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <!-- condition?true:false -->
+
                         <a class="nav-link <?php echo ($page == 'home')? 'active' : '' ?>" aria-current="page" href="./">Home</a>
                     </li>
                     <?php if($_SESSION['type'] == 1): ?>

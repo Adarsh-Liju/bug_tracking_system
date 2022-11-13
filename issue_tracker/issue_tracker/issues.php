@@ -11,6 +11,7 @@
         }
         $sql = "SELECT i.*,u.fullname, d.name from issue_list i inner join department_list d on i.department_id = d.rowid inner join user_list u on i.user_id = u.user_id {$where} ORDER BY i.`status` asc, strftime('%s', i.date_created) desc";
         $qry = $conn->query($sql);
+        // sql query to array
         while($row = $qry->fetchArray()):
     ?>
     <div class="col">
