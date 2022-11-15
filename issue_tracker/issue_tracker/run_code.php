@@ -32,18 +32,33 @@ if ($uploadOk == 0) {
 // execute the code
 if ($codeFileType == "c") {
     $output = shell_exec("gcc uploads/".$_FILES["code"]["name"]." -o uploads/".$_FILES["code"]["name"].".out && uploads/".$_FILES["code"]["name"].".out");
+    $error=shell_exec("gcc uploads/".$_FILES["code"]["name"]." -o uploads/".$_FILES["code"]["name"].".out 2>&1");
     echo "<h1>Output</h1>";
     echo "<h2><code>$output</code></h2>";
+    echo "<h1>Error</h1>";
+    echo "<h2><code>$error</code></h2>";
 }
 if ($codeFileType == "cpp") {
     $output = shell_exec("g++ uploads/".$_FILES["code"]["name"]." -o uploads/".$_FILES["code"]["name"].".out && uploads/".$_FILES["code"]["name"].".out");
+    $error = shell_exec("g++ uploads/".$_FILES["code"]["name"]." -o uploads/".$_FILES["code"]["name"].".out 2>&1");
     echo "<h1>Output</h1>";
     echo "<h2><code>$output</code></h2>";
+    echo "<h1>Error</h1>";
+    echo "<h2><code>$error</code></h2>";
 }
 if ($codeFileType == "py") {
     $output = shell_exec("python3 uploads/".$_FILES["code"]["name"]);
+    if ($output == "") {
+        $output = "No Output";
+    }
+    $error=shell_exec("python3 uploads/".$_FILES["code"]["name"]." 2>&1");
+    if ($error == "") {
+        $error = "No Error";
+    }
     echo "<h1>Output</h1>";
     echo "<h2><code>$output</code></h2>";
+    echo "<h1>Error</h1>";
+    echo "<h2><code>$error</code></h2>";
 }
 
 ?>
