@@ -33,6 +33,14 @@ else:
     print("CSS file does not exist")
     test.append(false)
 
+uploads= os.path.exists("uploads")
+if uploads:
+    print("Uploads folder exists")
+    test.append(true)
+else:
+    print("Uploads folder does not exist")
+    test.append(false)
+
 print("------------------------------------------------------------")
 for i in test:
     if i == true:

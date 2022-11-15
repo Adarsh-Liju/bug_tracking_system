@@ -1,11 +1,13 @@
 <!-- get code data and execute it in gcc -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<a type="button" class="btn btn-primary text-right" href="index.php">Go Back</a><br><br>
+<h2>File Status</h2>
 <?php
 // save the code locally
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["code"]["name"]);
 $uploadOk = 1;
 $codeFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-print($codeFileType);
 // Check file size
 if ($_FILES["code"]["size"] > 500000) {
     echo "Sorry, your file is too large.";
@@ -31,16 +33,17 @@ if ($uploadOk == 0) {
 if ($codeFileType == "c") {
     $output = shell_exec("gcc uploads/".$_FILES["code"]["name"]." -o uploads/".$_FILES["code"]["name"].".out && uploads/".$_FILES["code"]["name"].".out");
     echo "<h1>Output</h1>";
-    echo "<pre>$output</pre>";
+    echo "<h2><code>$output</code></h2>";
 }
 if ($codeFileType == "cpp") {
     $output = shell_exec("g++ uploads/".$_FILES["code"]["name"]." -o uploads/".$_FILES["code"]["name"].".out && uploads/".$_FILES["code"]["name"].".out");
     echo "<h1>Output</h1>";
-    echo "<pre>$output</pre>";
+    echo "<h2><code>$output</code></h2>";
 }
 if ($codeFileType == "py") {
-    $output = shell_exec("python uploads/".$_FILES["code"]["name"]);
+    $output = shell_exec("python3 uploads/".$_FILES["code"]["name"]);
     echo "<h1>Output</h1>";
-    echo "<pre>$output</pre>";
+    echo "<h2><code>$output</code></h2>";
 }
+
 ?>

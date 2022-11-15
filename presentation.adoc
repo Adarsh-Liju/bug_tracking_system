@@ -1,0 +1,19 @@
+Bug Tracking System
+-------------------
+
+== Why SQLite? ==
+
+
+. SQLite is a small, fast, self-contained, high-reliability, full-featured Database System that is available for free.
+. WE are using SQLite because it is easy to maintain compared to mysql and ms Sql servers, SQLite also does not require a seperate server , which will be a reduntant service for the client
+. SQLite is a very good choice for a small project like this, as it is very easy to use and maintain, and it is also very fast and reliable.
+. It is more faster and better for network based software and deployment
+
+
+== Our Entire Software does not require an internet connection ==
+
+. Most of the assets and CDN used in our software are local, which means that the software will work even if the internet connection is down or if it is slow.
+
+. This increases the reliability of the software, and also makes it more secure from hackers and other malicious attacks.
+
+. 
